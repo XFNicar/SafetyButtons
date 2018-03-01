@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "SafetyButton.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    SafetyButton *button = [SafetyButton buttonWithType:UIButtonTypeCustom];
+//    [button setSafetyDuration:@2 action:^{
+//        NSLog(@"响应一次有效的点击");
+//    }];
+    
+    [button setEffectivityDuration:@2 action:^{
+        NSLog(@"这是一次有效响应");
+    }];
+    
+    [self.view addSubview:button];
+    button.frame = CGRectMake(0, 0, 200, 50);
+    [button setTitle:@"安全点击按钮" forState:UIControlStateNormal];
+    button.center = self.view.center;
+    button.backgroundColor = [UIColor grayColor];
+
 }
 
 

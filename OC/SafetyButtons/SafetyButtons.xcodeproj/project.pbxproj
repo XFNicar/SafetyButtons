@@ -13,6 +13,7 @@
 		A057557E2047EFA9009F7056 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A057557D2047EFA9009F7056 /* Assets.xcassets */; };
 		A05755812047EFA9009F7056 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A057557F2047EFA9009F7056 /* LaunchScreen.storyboard */; };
 		A05755842047EFA9009F7056 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A05755832047EFA9009F7056 /* main.m */; };
+		A05755902047FA24009F7056 /* SafetyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A057558F2047FA24009F7056 /* SafetyButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		A05755802047EFA9009F7056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A05755822047EFA9009F7056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A05755832047EFA9009F7056 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A057558E2047FA24009F7056 /* SafetyButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SafetyButton.h; sourceTree = "<group>"; };
+		A057558F2047FA24009F7056 /* SafetyButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafetyButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 			children = (
 				A05755742047EFA9009F7056 /* AppDelegate.h */,
 				A05755752047EFA9009F7056 /* AppDelegate.m */,
+				A057558E2047FA24009F7056 /* SafetyButton.h */,
+				A057558F2047FA24009F7056 /* SafetyButton.m */,
 				A05755772047EFA9009F7056 /* ViewController.h */,
 				A05755782047EFA9009F7056 /* ViewController.m */,
 				A057557A2047EFA9009F7056 /* Main.storyboard */,
@@ -142,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05755902047FA24009F7056 /* SafetyButton.m in Sources */,
 				A05755792047EFA9009F7056 /* ViewController.m in Sources */,
 				A05755842047EFA9009F7056 /* main.m in Sources */,
 				A05755762047EFA9009F7056 /* AppDelegate.m in Sources */,
@@ -281,7 +287,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NB834M3BNU;
 				INFOPLIST_FILE = SafetyButtons/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YanYi.SafetyButtons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -296,7 +302,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NB834M3BNU;
 				INFOPLIST_FILE = SafetyButtons/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YanYi.SafetyButtons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
