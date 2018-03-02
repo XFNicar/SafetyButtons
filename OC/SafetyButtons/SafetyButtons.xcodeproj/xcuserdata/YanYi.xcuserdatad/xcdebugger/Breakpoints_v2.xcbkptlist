@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
             endingLineNumber = "89"
-            landmarkName = "-setEffectivityDuration:action:"
+            landmarkName = "-doubleClickingAction"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

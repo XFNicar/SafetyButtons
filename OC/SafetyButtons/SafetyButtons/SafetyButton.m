@@ -11,8 +11,8 @@
 @interface SafetyButton ()
 
 @property (nonatomic, strong) dispatch_source_t  timer;
-@property (nonatomic, copy  ) NSNumber           *safatyTime;
-@property (nonatomic, copy  ) NSNumber           *safatyDuration;
+@property (nonatomic, copy  ) NSNumber           *safetyTime;
+@property (nonatomic, copy  ) NSNumber           *safetyDuration;
 @property (nonatomic, copy  ) NSNumber           *effectivityTime;
 @property (nonatomic, copy  ) NSNumber           *effectivityDuration;
 
@@ -26,20 +26,20 @@
 
 - (SafetyButton *)setSafetyDuration:(NSNumber *)duration
                        action:(ActionBlock )action {
-    self.safatyDuration = duration;
+    self.safetyDuration = duration;
     self.block = action;
     [self addTarget:self action:@selector(safetyAction) forControlEvents:UIControlEventTouchUpInside];
     return self;
 }
 
 - (void)safetyAction {
-    if (self.safatyTime.integerValue > 0) {
+    if (self.safetyTime.integerValue > 0) {
         NSLog(@"点击无效");
         return;
     } else { // 如果可以满足响应，则响应事件，然后设置条件，两秒内限制下次出发
         if (self.block) {
             self.block();
-            self.safatyTime = self.safatyDuration;
+            self.safetyTime = self.safetyDuration;
             NSLog(@"点击有效");
             [self safatyTimeConfig];
         }
@@ -48,7 +48,7 @@
 
 - (void)safatyTimeConfig {
     
-    __block int count =  [self.safatyTime intValue];
+    __block int count =  [self.safetyTime intValue];
     dispatch_queue_t queue = dispatch_get_main_queue();
     self.timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     dispatch_time_t start = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC));
@@ -56,7 +56,7 @@
     dispatch_source_set_timer(self.timer, start, interval, 0);
     dispatch_source_set_event_handler(self.timer, ^{
         count--;
-        self.safatyTime = @(count);
+        self.safetyTime = @(count);
         if (count <= 0) {
             dispatch_cancel(self.timer);
             self.timer = nil;
